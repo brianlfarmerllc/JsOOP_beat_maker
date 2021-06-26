@@ -6,7 +6,7 @@
     <meta name="robots" content="index,follow" />
     <meta name="description" content="" />
     <link rel="icon" href="" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
     <title>Beatmaker</title>
   </head>
 
@@ -14,7 +14,7 @@
     <main>
       <section>
         <div class="sequencer">
-          <div class="kick-track">
+          <div class="track kick-track">
             <div class="controls">
               <h2>Kick</h2>
               <button data-track="0" class="mute kick-volume">
@@ -30,7 +30,7 @@
                 </option>
               </select>
             </div>
-            <div class="kick">
+            <div class="pad-container kick">
               <div class="pad kick-pad b0"></div>
               <div class="pad kick-pad b1"></div>
               <div class="pad kick-pad b2"></div>
@@ -42,7 +42,7 @@
               <div class="pad kick-pad b8"></div>
             </div>
           </div>
-          <div class="snare-track">
+          <div class="track snare-track">
             <div class="controls">
               <h2>Snare</h2>
               <button data-track="1" class="mute snare-volume">
@@ -58,7 +58,7 @@
                 </option>
               </select>
             </div>
-            <div class="snare">
+            <div class="pad-container snare">
               <div class="pad snare-pad b0"></div>
               <div class="pad snare-pad b1"></div>
               <div class="pad snare-pad b2"></div>
@@ -70,7 +70,7 @@
               <div class="pad snare-pad b8"></div>
             </div>
           </div>
-          <div class="hihat-track">
+          <div class="track hihat-track">
             <div class="controls">
               <h2>Hihat</h2>
               <button data-track="2" class="mute hihat-volume">
@@ -83,7 +83,7 @@
                 <option value="./assets/audio/hihat-808.wav">808 Hihat</option>
               </select>
             </div>
-            <div class="hihat">
+            <div class="pad-container hihat">
               <div class="pad hihat-pad b0"></div>
               <div class="pad hihat-pad b1"></div>
               <div class="pad hihat-pad b2"></div>
@@ -95,8 +95,8 @@
               <div class="pad hihat-pad b8"></div>
             </div>
           </div>
+          <button class="play">Play</button>
         </div>
-        <button class="play">Play</button>
         <audio class="kick-sound" src="./assets/audio/kick-classic.wav"></audio>
         <audio
           class="snare-sound"
