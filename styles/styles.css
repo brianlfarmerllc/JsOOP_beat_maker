@@ -49,9 +49,12 @@ svg {
 }
 
 select {
-  padding: 0.75rem;
-  font-size: 0.75rem;
-  margin-left: 1rem;
+  padding: 0.5rem 1rem 0.5rem 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
 }
 
 .pad-container {
@@ -68,19 +71,19 @@ select {
 }
 
 .kick-pad {
-  background: rgba(13, 212, 238, 0.705);
+  background: rgb(196, 248, 255);
 }
 .kick-pad.active {
   background: rgb(29, 227, 253);
 }
 .snare-pad {
-  background: rgba(81, 255, 148, 0.712);
+  background: rgb(192, 255, 216);
 }
 .snare-pad.active {
   background: rgb(81, 255, 148);
 }
 .hihat-pad {
-  background: rgba(245, 142, 190, 0.678);
+  background: rgb(250, 214, 230);
 }
 .hihat-pad.active {
   background: rgb(253, 88, 165);
@@ -94,4 +97,13 @@ select {
   cursor: pointer;
   transition: all 0.5s ease;
   margin-top: 1rem;
+}
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
