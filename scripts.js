@@ -1,8 +1,10 @@
 class DrumKit {
   constructor() {
     this.pads = document.querySelectorAll(".pad");
-    this.playButton = document.querySelector(".play");
+    this.muteBtns = document.querySelectorAll(".mute");
     this.selects = document.querySelectorAll("select");
+    this.playButton = document.querySelector(".play");
+    this.tempoSlider = document.querySelector(".tempo-slider");
     this.currentKick = "./assets/audio/kick-classic.wav";
     this.currentSnare = "./assets/audio/snare-acoustic01.wav";
     this.currentHighhat = "./assets/audio/hihat-acoustic01.wav";
@@ -77,6 +79,54 @@ class DrumKit {
         break;
     }
   }
+  mute(e) {
+    const muteIndex = e.target.getAttribute("data-track");
+    console.log(muteIndex);
+    e.target.classList.toggle("active");
+    if (e.target.classList.contains("active")) {
+      switch (muteIndex) {
+        case "0":
+          this.kickAudio.volume = 0;
+          break;
+        case "1":
+          this.snareAudio.volume = 0;
+          break;
+        case "2":
+          this.hihatAudio.volume = 0;
+          break;
+
+        default:
+          break;
+      }
+    } else {
+      switch (muteIndex) {
+        case "0":
+          this.kickAudio.volume = 1;
+          break;
+        case "1":
+          this.snareAudio.volume = 1;
+          break;
+        case "2":
+          this.hihatAudio.volume = 1;
+          break;
+
+        default:
+          break;
+      }
+    }
+  }
+  changeTempo(e) {
+    const tempoText = document.querySelector(".tempo-nr");
+    this.bpm = e.target.value;
+    tempoText.innerText = e.target.value;
+  }
+  updateTempo() {
+    clearInterval(this.isPlaying);
+    this.isPlaying = null;
+    if (this.playButton.classList.contains(".active")) {
+      this.start();
+    }
+  }
 }
 
 const drumKit = new DrumKit();
@@ -91,7 +141,7 @@ drumKit.pads.forEach((pad) => {
 });
 
 // adding callback to invoke method in event listener to maintain this keyword reference
-drumKit.playButton.addEventListener("click", () => {
+drumKit.playButton.addEventListener("click", function () {
   drumKit.updateButton();
   drumKit.start();
 });
@@ -100,4 +150,18 @@ drumKit.selects.forEach((select) => {
   select.addEventListener("change", function (e) {
     drumKit.changeSound(e);
   });
+});
+
+drumKit.muteBtns.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    drumKit.mute(e);
+  });
+});
+
+drumKit.tempoSlider.addEventListener("input", function (e) {
+  drumKit.changeTempo(e);
+});
+
+drumKit.tempoSlider.addEventListener("change", function (e) {
+  drumKit.updateTempo(e);
 });

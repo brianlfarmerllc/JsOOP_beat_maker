@@ -57,6 +57,10 @@ svg {
   transition: all 0.5s ease;
 }
 
+.controls .active {
+  background: rgb(190, 190, 190);
+}
+
 select {
   padding: 0.5rem 1rem 0.5rem 0;
   margin: 0;
@@ -103,6 +107,28 @@ select {
   cursor: pointer;
   transition: all 0.5s ease;
   margin-top: 1rem;
+}
+
+.tempo {
+  margin: 1rem;
+  width: 30%;
+}
+
+.tempo-slider {
+  padding: 0.2rem;
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  background: rgb(63, 63, 63);
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.tempo p {
+  font-size: 1.5rem;
+  margin: 1rem;
+  text-align: center;
 }
 
 @keyframes playTrack {
