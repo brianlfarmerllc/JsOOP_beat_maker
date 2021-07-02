@@ -28,14 +28,15 @@ svg {
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  margin: 2rem 0rem;
+  margin: 1rem auto;
+  flex-wrap: wrap;
 }
 
 .controls {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex: 1;
+  flex: 1 1 15rem;
   margin: 0rem 3rem 0rem 1rem;
 }
 
@@ -69,12 +70,13 @@ select {
 
 .pad-container {
   display: flex;
-  flex: 2;
+  justify-content: space-between;
+  flex: 4 1 30rem;
 }
 
 .pad {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 5rem;
+  height: 5rem;
   margin: 1rem 0.5rem;
   cursor: pointer;
   transition: all 0.5s ease;
