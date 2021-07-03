@@ -141,3 +141,28 @@ select {
     transform: scale(1.2);
   }
 }
+
+@media screen and (max-width: 1220px) {
+  .track {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .controls {
+    width: 40%;
+    flex: 1 1 2rem;
+    margin: 0;
+  }
+  .controls h2 {
+    margin-right: 0.5rem;
+  }
+
+  .controls .button-div {
+    margin-right: 0.5rem;
+  }
+  .pad-container {
+    flex: 1 1 2rem;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+}
